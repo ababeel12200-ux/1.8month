@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anniversary Digital Gift Box</title>
+  <style>
+    .gift-box {
+      width: 150px;
+      height: 150px;
+      margin: 50px auto;
+      background: url('https://i.imgur.com/9yGTCZT.png') no-repeat center/cover;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gift-box:active {
+      transform: scale(0.97);
+    }
+    #gift-content {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #a94442;
+      min-height: 100px;
+      transition: opacity 0.5s;
+    }
+    img.meme {
+      max-width: 120px;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="gift-box" onclick="openGift()"></div>
+  <div id="gift-content"></div>
+
+  <script>
+    const gifts = [
+      '<img class="meme" src="https://i.imgur.com/funnyMeme1.jpg" alt="Meme"> <br> "No distance can break what we have!"',
+      '"You are the poetry in all my days. Happy Anniversary!"',
+      'Secret Message: "Check your WhatsApp in 10 minutes… 💌"',
+      'Coupon Code: <b>VIDEODATE2025</b> (Redeem for a virtual movie night!)',
+      '"I love you more than all the miles between us. Surprise FaceTime tonight?"',
+      '<img class="meme" src="https://i.imgur.com/cutecat.jpg" alt="Cute Cat"> <br> "I’d send a cat to cuddle you if I could!"'
+    ];
+    function openGift() {
+      const idx = Math.floor(Math.random() * gifts.length);
+      document.getElementById('gift-content').innerHTML = gifts[idx];
+    }
+  </script>
+</body>
+</html>
